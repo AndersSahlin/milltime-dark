@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Milltime Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        1.0.1
+@version        1.0.2
 @description    Dark Mode for Milltime time registration cloud app
 @author         AndersRoos
 @homepageURL    https://github.com/AndersSahlin/milltime-dark/
@@ -99,6 +99,9 @@
     }
 
     /* Slider buttons */
+    .MuiBox-root:has(>button[data-cy^="Sliderbutton-"]) {
+        border-color: var(--main-border-color) !important;
+    }
     button[data-cy^="Sliderbutton-"] {
         background-color: var(--secondary-bg-color) !important;
 
