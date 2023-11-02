@@ -1,0 +1,461 @@
+/* ==UserStyle==
+@name           Milltime Dark Mode
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Dark Mode for Milltime time registration cloud app
+@author         AndersRoos
+==/UserStyle== */
+@-moz-document domain("millnet.cloud") {
+
+
+    /* Dark Theme colors */
+    :root {
+        --main-bg-color: hsl(0, 0%, 15%);
+        --secondary-bg-color: hsl(0, 0%, 20%);
+        --muted-bg-color: hsl(0, 0%, 28%);
+        --muted2-bg-color: hsl(0, 0%, 25%);
+        --muted3-bg-color: hsl(0, 0%, 36%);
+
+        --main-text-color: hsl(210, 9%, 91.5%);
+        --muted-text-color: hsl(210, 9%, 51.5%);
+
+        --danger-color: hsl(1, 75%, 70%);
+        --success-color: hsl(105, 28%, 40%);
+        --success2-color: hsl(105, 50%, 28%);
+
+        --main-theme-color: hsl(258 75% 70% / 1);
+        --secondary-theme-color: hsl(257.14deg 63.64% 40.98%);
+        --muted-theme-color: hsl(256, 35%, 30%);
+        --muted2-theme-color: hsl(256, 30%, 40%);
+        --muted3-theme-color: hsl(256, 30%, 50%);
+
+        --main-border-color: hsl(0, 0%, 50%);
+        --secondary-border-color: hsl(0, 0%, 40%);
+    }
+
+
+    /* Main background */
+    html,
+    body,
+    #root {
+        background-color: var(--main-bg-color) !important;
+    }
+
+    /* Text */
+    .MuiTypography-root {
+        color: var(--main-text-color) !important;
+
+        & [class$='-shortCut'] {
+            background-color: var(--muted2-theme-color) !important;
+        }
+    }
+
+    /* Buttons */
+    .MuiButtonBase-root {
+        color: var(--main-text-color) !important;
+
+        &:hover {
+            background-color: var(--muted-bg-color) !important;
+        }
+
+        &.MuiButton-outlinedPrimary {
+            color: var(--main-theme-color) !important;
+            border-color: var(--main-theme-color) !important;
+            background-color: unset !important;
+
+            &:hover {
+                background-color: var(--main-theme-color) !important;
+            }
+        }
+
+        &.MuiButton-containedPrimary {
+            background-color: var(--muted2-theme-color) !important;
+
+            &:hover {
+                background-color: var(--main-theme-color) !important;
+            }
+        }
+
+        & .MuiSvgIcon-colorPrimary,
+        & [data-testid="SwapHorizTwoToneIcon"] {
+            color: var(--main-theme-color) !important;
+        }
+
+        /* Icons in buttons */
+        & .MuiSvgIcon-colorAction,
+        & [class$='timerButton'],
+        & [class$='listIcon'] {
+            color: var(--main-text-color) !important;
+        }
+    }
+
+    /* Slider buttons */
+    .MuiBox-root:has(>button[data-cy^="Sliderbutton-"]) {
+        border-color: var(--main-border-color) !important;
+
+        & button[data-cy^="Sliderbutton-"] {
+            background-color: var(--secondary-bg-color) !important;
+
+            /* Active */
+            &[class*='true'] {
+                background-color: var(--muted2-theme-color) !important;
+                border-color: var(--muted2-theme-color) !important;
+            }
+
+            &:hover {
+                background-color: var(--main-theme-color) !important;
+                border-color: var(--main-theme-color) !important;
+            }
+        }
+    }
+
+    /* Check icons */
+    svg[data-testid="CheckIcon"] {
+        background-color: var(--main-text-color) !important;
+        color: var(--success-color) !important;
+    }
+
+    /* Button icons with primary color */
+    .MuiSvgIcon-root[data-testid="CalendarTodayIcon"],
+    .MuiSvgIcon-root[data-testid="LanguageIcon"] {
+        color: var(--main-theme-color) !important;
+    }
+
+    /* Unchecked Star icon */
+    .MuiSvgIcon-root.mui-18rj5x9:not(.Favorite) {
+        color: transparent !important;
+    }
+
+    .MuiStack-root {
+        & [class$='-button'] {
+            background-color: var(--muted-bg-color) !important;
+
+            & svg {
+                color: var(--main-theme-color) !important;
+            }
+        }
+    }
+
+
+    /* Inputs and form controls */
+    .MuiFormControl-root {
+        & label,
+        legend {
+            color: var(--main-text-color) !important;
+
+            &.Mui-focused {
+                color: var(--main-theme-color) !important;
+            }
+
+            &.Mui-disabled {
+                color: var(--muted-text-color) !important;
+            }
+        }
+
+        & .MuiRadio-root {
+            &.Mui-checked {
+                color: var(--main-theme-color) !important;
+            }
+        }
+    }
+    .MuiInputBase-root {
+        color: var(--main-text-color) !important;
+
+        &::after {
+            border-color: var(--main-theme-color) !important;
+        }
+
+        /* Search bar */
+        &.mui-5mu5w7 {
+            background-color: var(--muted2-bg-color) !important;
+        }
+
+        & .Mui-disabled {
+            -webkit-text-fill-color: var(--muted-text-color) !important;
+        }
+    }
+
+
+    /* Grid */
+    .MuiDataGrid-row {
+
+        &.Mui-selected {
+            background-color: var(--muted3-bg-color) !important;
+        }
+
+        &:hover:not(.Mui-selected) {
+            background-color: var(--muted2-bg-color) !important;
+        }
+    }
+
+    /* Reset background on certain container elements */
+    .MuiBox-root[role="tabpanel"],
+    .MuiBackdrop-root,
+    .mui-1gmeyyl,
+    .mui-1jmej02,
+    .mui-1jdkdd7 {
+        background-color: unset !important;
+    }
+
+    /* Block elements on Expenses, Drive Log */
+    .MuiBox-root.mui-eecgk {
+        background-color: var(--secondary-bg-color) !important;
+
+        & .mui-mj6r4u {
+            background-color: var(--muted-bg-color) !important;
+        }
+    }
+
+    /* Dialog */
+    .MuiDialog-paper,
+    .MuiPaper-root {
+        background-color: var(--secondary-bg-color) !important;
+    }
+
+    /* Login container */
+    .mui-1hwtvfg .MuiPaper-root {
+        background-color: var(--main-bg-color) !important;
+    }
+
+    /* AppBar */
+    .MuiAppBar-root {
+        background-color: var(--secondary-bg-color) !important;
+    }
+
+    /* Toolbar with name and sign-out link */
+    .MuiAppBar-root > .MuiToolbar-root > .MuiBox-root:first-child {
+        background: unset !important;
+        background-color: var(--main-bg-color) !important;
+    }
+
+    /* Toolbar buttons */
+    .MuiBox-root[class*="-menubuttonselected"],
+    a[class*="-menubuttonselected"] {
+        background-color: var(--secondary-theme-color) !important;
+    }
+
+    /* My Pages */
+    /* Name header*/
+    .mui-1r6vvfm {
+        background-color: var(--muted-bg-color) !important;
+    }
+    /* Buttons */
+    .mui-pt3im4 {
+        border-color: var(--main-border-color) !important;
+    }
+
+    /* Tabs */
+    /* Tab header */
+    .MuiTabs-root {
+        background-color: var(--secondary-bg-color) !important;
+        color: var(--main-text-color) !important;
+    }
+
+    /* Active tab */
+    .MuiTabs-root .MuiTab-textColorPrimary.Mui-selected {
+        color: var(--main-theme-color) !important;
+        background-color: var(--secondary-bg-color) !important;
+        font-weight: bold !important;
+    }
+    .MuiTab-root:hover {
+        background-color: var(--muted-bg-color) !important;
+    }
+
+    /* Active tab indicator */
+    .MuiTabs-root .MuiTabs-indicator {
+        background-color: var(--main-theme-color) !important;
+    }
+
+    /* Divider */
+    .MuiDivider-root.MuiDivider-fullWidth {
+        border-color: var(--main-border-color) !important;
+    }
+
+    /* Collapse left panel button */
+    .MuiIconButton-root[style="float: left; align-self: center; background-color: rgb(255, 255, 255); border: 1px solid rgb(238, 238, 238); left: -6px;"],
+    .MuiIconButton-root[style="float: right; align-self: center; background-color: rgb(255, 255, 255); border: 1px solid rgb(238, 238, 238);"] {
+        color: var(--main-text-color) !important;
+        background-color: var(--muted2-theme-color) !important;
+
+        &:hover {
+            background-color: var(--main-theme-color) !important;
+        }
+    }
+
+    /* Time Table */
+    /* Table cells */
+    td.MuiTableCell-root {
+        background-color: unset !important;
+    }
+
+    /* Table headers */
+    .MuiTableRow-head {
+        background-color: var(--secondary-bg-color) !important;
+    }
+
+    /* Table footers */
+    .MuiTableFooter-root {
+        background-color: var(--secondary-bg-color) !important;
+    }
+
+    /* Activity rows (odd and even) */
+    .MillTableRow.ActivityRow:nth-of-type(2n+1) {
+        background-color: var(--muted-bg-color) !important;
+    }
+    .MillTableRow.ActivityRow:nth-of-type(2n) {
+        background-color: var(--muted2-bg-color) !important;
+    }
+
+    /* Project row */
+    .RegTable.WeekPlan {
+        background-color: var(--secondary-bg-color) !important;
+    }
+
+    /* Locked table cells */
+    td.MuiTableCell-root.Locked {
+        background-color: var(--muted3-bg-color) !important;
+    }
+
+    /* Time sheet cell */
+    .WeekViewCell {
+        color: var(--main-text-color) !important;
+
+        &.registration:hover {
+            background-color: var(--muted3-bg-color) !important;
+        }
+
+        & input {
+            color: var(--main-text-color) !important;
+        }
+
+        &.highlight {
+            border-color: var(--muted2-theme-color) !important;
+            background-color: rgba(255, 255, 255, 0.025) !important;
+        }
+
+        &.today {
+            background-color: var(--muted2-theme-color) !important;
+        }
+
+        /* Sum of daily hours */
+        & #dailysum-tooltip {
+            /* All daily hours filled */
+            & h4[style*='background-color: rgb(165, 212, 150)'] {
+                background-color: var(--success-color) !important;
+            }
+        }
+
+        &.Disabled {
+            /* Sum of daily hours for locked days */
+            #dailysum-tooltip {
+                & h4 {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+
+    /* Left sidebar boxes */
+    .simplebar-content > .MuiGrid-root > .MuiBox-root {
+        background-color: var(--secondary-bg-color) !important;
+    }
+
+    /* Calendar */
+    /* Week days headers (Må, Ti, On...) */
+    [style='font-weight: 500; color: rgb(76, 38, 171);'] {
+        color: var(--main-theme-color) !important;
+    }
+
+    /* Weekend 'röd dag' headers */
+    [style='font-weight: 500; color: rgb(255, 94, 91);'] {
+        color: var(--danger-color) !important;
+    }
+
+    /* Week */
+    .WeekBox.WeekView {
+        border-color: var(--secondary-border-color) !important;
+
+        &.selected {
+            border-color: var(--muted2-theme-color) !important;
+        }
+    }
+
+    /* Week days and numbers */
+    .WeekNumber {
+        background-color: var(--muted-bg-color) !important;
+    }
+
+    .WeekNumber,
+    .WeekDay {
+        border-right: 1px solid var(--secondary-border-color) !important;
+
+        &.HasAdditionalData {
+            background: linear-gradient(45deg, var(--secondary-bg-color) 88%, var(--muted2-theme-color) 12%);
+        }
+
+        &.HasAdditionalData.Locked,
+        &.HasAdditionalData:hover {
+            background: linear-gradient(45deg, var(--muted3-bg-color) 88%, var(--main-theme-color) 12%);
+        }
+
+        &:not(.Locked):not(.Disabled):hover {
+            background-color: var(--muted3-bg-color) !important;
+        }
+
+        &.Current > h6:first-of-type {
+            background-color: var(--muted2-theme-color) !important;
+        }
+
+        &.Current:hover > h6:first-of-type {
+            background-color: var(--main-theme-color) !important;
+        }
+
+        &.Locked,
+        &.Disabled {
+            opacity: 0.8;
+        }
+
+        &.fulfilled > :last-of-type {
+            background-color: var(--success-color) !important;
+        }
+
+        &.overfilled > :last-of-type {
+            background-color: var(--success2-color) !important;
+        }
+    }
+
+    /* Days part of this month in week from previous month */
+    .DifferentMonth + div:not(.DifferentMonth) {
+        border-left: 1px solid var(--secondary-border-color) !important;
+    }
+
+    /* Weekend 'röd dag' days */
+    [style='pointer-events: none; font-weight: 400; color: rgb(255, 94, 91);'] {
+        color: var(--danger-color) !important;
+    }
+
+    /* Locked days */
+    .WeekDay.Locked {
+        background-color: var(--muted-bg-color) !important;
+    }
+
+    /* Lock icon */
+    [data-testid="LockIcon"] > * {
+        color: var(--success-color) !important;
+    }
+
+    /* Time report stats */
+    /* Time summaries */
+    .MuiFormLabel-root[class*='-label'] {
+        color: var(--main-text-color) !important;
+    }
+    .MuiBox-root canvas + .MuiBox-root > label {
+        color: var(--main-text-color) !important;
+    }
+
+    /* Details panel for expenses */
+    #detailpaneldialog {
+        background-color: var(--secondary-bg-color) !important;
+    }
+}
