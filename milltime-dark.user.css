@@ -21,6 +21,7 @@
 
         --main-text-color: hsl(210, 9%, 91.5%);
         --muted-text-color: hsl(210, 9%, 51.5%);
+        --highlight-text-color: hsl(0, 0%, 15%);
 
         --danger-color: hsl(1, 75%, 70%);
         --success-color: hsl(105, 28%, 40%);
@@ -45,12 +46,17 @@
     }
 
     /* Text */
-    .MuiTypography-root {
+    .MuiTypography-root:not([style*="background-color: rgb(238, 238, 238)"]) {
         color: var(--main-text-color) !important;
 
         & [class$='-shortCut'] {
             background-color: var(--muted2-theme-color) !important;
         }
+    }
+    
+    /* highlighted time */
+    .unfulfilled > :last-of-type {
+        color: var(--highlight-text-color) !important;
     }
 
     /* Buttons */
@@ -93,22 +99,18 @@
     }
 
     /* Slider buttons */
-    .MuiBox-root:has(>button[data-cy^="Sliderbutton-"]) {
-        border-color: var(--main-border-color) !important;
+    button[data-cy^="Sliderbutton-"] {
+        background-color: var(--secondary-bg-color) !important;
 
-        & button[data-cy^="Sliderbutton-"] {
-            background-color: var(--secondary-bg-color) !important;
+        /* Active */
+        &[class*='true'] {
+            background-color: var(--muted2-theme-color) !important;
+            border-color: var(--muted2-theme-color) !important;
+        }
 
-            /* Active */
-            &[class*='true'] {
-                background-color: var(--muted2-theme-color) !important;
-                border-color: var(--muted2-theme-color) !important;
-            }
-
-            &:hover {
-                background-color: var(--main-theme-color) !important;
-                border-color: var(--main-theme-color) !important;
-            }
+        &:hover {
+            background-color: var(--main-theme-color) !important;
+            border-color: var(--main-theme-color) !important;
         }
     }
 
