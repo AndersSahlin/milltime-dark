@@ -1,9 +1,12 @@
 /* ==UserStyle==
 @name           Milltime Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.0.1
 @description    Dark Mode for Milltime time registration cloud app
 @author         AndersRoos
+@homepageURL    https://github.com/AndersSahlin/milltime-dark/
+@supportURL     https://github.com/AndersSahlin/milltime-dark/
+@updateURL      https://raw.githubusercontent.com/AndersSahlin/milltime-dark/main/milltime-dark.user.css
 ==/UserStyle== */
 @-moz-document domain("millnet.cloud") {
 
