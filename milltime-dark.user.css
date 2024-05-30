@@ -6,6 +6,7 @@
 @author         AndersRoos
 @homepageURL    https://github.com/AndersSahlin/milltime-dark/
 @supportURL     https://github.com/AndersSahlin/milltime-dark/
+@updateURL https://raw.githubusercontent.com/AndersSahlin/milltime-dark/main/milltime-dark.user.css
 ==/UserStyle== */
 @-moz-document domain("millnet.cloud") {
 
@@ -201,7 +202,6 @@
         }
     }
 
-    
     /* Grid */
     .MuiDataGrid-row {
 
@@ -213,7 +213,8 @@
             background-color: var(--muted2-bg-color) !important;
         }
     }
-    
+
+    /* Grid table headers */
     .MuiDataGrid-columnHeaderTitle {
         color: var(--main-text-color) !important;
     }
