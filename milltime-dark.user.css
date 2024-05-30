@@ -6,7 +6,6 @@
 @author         AndersRoos
 @homepageURL    https://github.com/AndersSahlin/milltime-dark/
 @supportURL     https://github.com/AndersSahlin/milltime-dark/
-@updateURL      https://raw.githubusercontent.com/AndersSahlin/milltime-dark/main/milltime-dark.user.css
 ==/UserStyle== */
 @-moz-document domain("millnet.cloud") {
 
@@ -97,6 +96,16 @@
         & [class$='timerButton'],
         & [class$='listIcon'] {
             color: var(--main-text-color) !important;
+        }
+        
+        /* Date picker */
+        &.MuiPickersDay-root {
+            background-color: var(--muted-bg-color) !important;
+            
+            &.Mui-selected{
+                
+            background-color: var(--muted2-theme-color) !important;
+            }
         }
     }
 
@@ -192,7 +201,7 @@
         }
     }
 
-
+    
     /* Grid */
     .MuiDataGrid-row {
 
@@ -203,6 +212,10 @@
         &:hover:not(.Mui-selected) {
             background-color: var(--muted2-bg-color) !important;
         }
+    }
+    
+    .MuiDataGrid-columnHeaderTitle {
+        color: var(--main-text-color) !important;
     }
 
     /* Reset background on certain container elements */
